@@ -52,3 +52,13 @@ class KVPair<K,V> {
   } // toString()
 } // class KVPair
 
+/**
+   * Retrieves all of the keys in the associative array. 
+   */
+  public String[] getAllKeys() {
+    String[] arr = new String[this.size];
+    for (int i = 0; i < this.size; i++) {
+      arr[i] = pairs[i].key.toString();
+      }
+    return arr;
+    }

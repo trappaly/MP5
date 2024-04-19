@@ -5,6 +5,7 @@ import structures.KeyNotFoundException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.BufferedWriter;
+import java.io.PrintWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -61,6 +62,7 @@ public class AACMappings {
       }
     }
   scanner.close();
+  reset();
  } catch (NullKeyException e){
  }
  catch (FileNotFoundException e){
@@ -146,23 +148,29 @@ public class AACMappings {
    * Writes the ACC mappings stored to a file 
    */
   
-   void writeToFile (String filename){
-    try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))){
-    for (int i = 0; i < categories.size(); i++) {
-      String category = categories.pairs[i].key;
-    for (String location : this.categories.get(category).getImages()) {
-      writer.write(location + this.categories.get(category).getText(location) + '\n');
-    }
-   }
-   } catch (KeyNotFoundException e){
-    e.printStackTrace();
-    }
-    catch (FileNotFoundException e){
-      e.printStackTrace();
-    }
-    catch (IOException e){
-      e.printStackTrace();
+
+
+   public void writeToFile (String filename){
+    try {
+    PrintWriter pen = new PrintWriter (new FileWriter(filename));
+    for (String imageLoc: categories.getAllKeys()){
+      AACCategory category = categories.get(imageLoc);
+      pen.println (imageLoc + category.getCategory());
+      for (String image : category.getImages()){
+        //if (ogCategory != curCategory){
+        pen.println(">" + image + " " + category.getText(image));
+      //}
+    //}
     }
   }
+    pen.close();
+  } catch (IOException e){
+    return; 
+
+  }
+  catch (KeyNotFoundException e){
+    return;
+  }
+   }
 } // writeToFile(String)
 

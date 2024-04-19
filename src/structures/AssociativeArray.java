@@ -33,7 +33,7 @@ public class AssociativeArray<K, V> {
   /**
    * The array of key/value pairs. Creates key and values
    */
-  KVPair<K, V> pairs[];
+  public KVPair<K, V> pairs[];
 
   // +--------------+------------------------------------------------
   // | Constructors |
@@ -215,7 +215,9 @@ public class AssociativeArray<K, V> {
     String[] arr = new String[this.size];
     for (int i = 0; i < this.size; i++){
       arr[i] = pairs[i].key.toString();
-  } // getallKeys
+  } 
+  return arr;
+}// getallKeys
 
   
 

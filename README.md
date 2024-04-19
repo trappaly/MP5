@@ -4,7 +4,7 @@ Due: Wednesday, March 6th, 2024
 
 Acknowledgements: I worked with classmates Medhashree, Connor, Vivien, Maya, and Candice to discuss ideas about the project. 
 I also got help from the tutors Simon, Jayson, Peter, Boston, Ishitha, Diogo, and Audrey. I also recieved 
-help from Professor Rebelskley.
+help from Professor Rebelskley. On the redo I recieved help from the tutor Professor Rebelskey and got help from Boston.
 
 Short Description: AAC.java uses the files AACCateogry, AAACMappings, and AssociativeArray.java. In AAC.java, the file adds the 
 AAACMappingsNew.txt file. It has categories of food and clothing. If you click on the category, there will be different types of food in

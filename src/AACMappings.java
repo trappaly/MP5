@@ -155,7 +155,7 @@ public class AACMappings {
     PrintWriter pen = new PrintWriter (new FileWriter(filename));
     for (String imageLoc: categories.getAllKeys()){
       AACCategory category = categories.get(imageLoc);
-      pen.println (imageLoc + category.getCategory());
+      pen.println (imageLoc + " " + category.getCategory());
       for (String image : category.getImages()){
         //if (ogCategory != curCategory){
         pen.println(">" + image + " " + category.getText(image));

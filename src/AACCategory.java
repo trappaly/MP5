@@ -2,13 +2,13 @@ import structures.AssociativeArray;
 import structures.NullKeyException;
 
 /**
- * A basic implementation of Associative Array with key and value types that will map image locations (string) 
- * to words (also strings)
+ * A basic implementation of AACCategory that stores a string category and a new
+ * associative array.
  * 
  * @author Alyssa Trapp
  */
 
-public class AACCategory{
+public class AACCategory {
 
   // +--------+------------------------------------------------------
   // | Fields |
@@ -24,9 +24,9 @@ public class AACCategory{
    */
   String category;
 
-
   /**
-   * The associative array that represents the array of the arrays of key values and pairs
+   * The associative array that represents the array of the arrays of key values
+   * and pairs
    */
   AssociativeArray<String, String> arr;
 
@@ -37,7 +37,7 @@ public class AACCategory{
   /**
    * The constructor for AACCategory
    */
-  public AACCategory (String category) {
+  public AACCategory(String category) {
     this.category = category;
     this.arr = new AssociativeArray<String, String>();
   } // AACCategory (String)
@@ -45,48 +45,49 @@ public class AACCategory{
   // +------------------+--------------------------------------------
   // | Standard Methods |
   // +------------------+
-  
-/**
- * Adds an item to the AACCategory array by mapping the image location to the text of the category
-*/
-public void addItem(String image, String text) throws NullKeyException{
-  arr.set (image, text);
-} // addItem (String, String)
 
-/**
- * Returns the name of the category 
-*/
-public String getCategory(){
-  if (category == null){
-    return null;
-  }
-  return category;
-} // getCategory()
+  /**
+   * Adds an item to the AACCategory array by mapping the image location to the
+   * text of the category
+   */
+  public void addItem(String image, String text) throws NullKeyException {
+    arr.set(image, text);
+  } // addItem (String, String)
 
-/**
- * Returns an array of image locations which represents where the images are stored at
-*/
-public String[] getImages() {
-  return arr.getAllKeys();
-} // getImages()
-  
-/**
- * Returns the text associated with the image location in the category
-*/
+  /**
+   * Returns the name of the category
+   */
+  public String getCategory() {
+    if (category == null) {
+      return null;
+    } // if
+    return category;
+  } // getCategory()
 
-public String getText(String image) {
-  try {
-    return arr.get(image);
-  } catch (Exception e) {
-    return "CONFUSION!";
-  }
-}
+  /**
+   * Returns an array of image locations which represents where the images are
+   * stored at
+   */
+  public String[] getImages() {
+    return arr.getAllKeys();
+  } // getImages()
 
+  /**
+   * Returns the text associated with the image location in the category
+   */
 
-/**
- * Determines if image is in the current category
- */
-public boolean hasImage(String image){
-  return arr.hasKey(image);
-  }
-} //hasImage(String)
+  public String getText(String image) {
+    try {
+      return arr.get(image);
+    } catch (Exception e) {
+      return "CONFUSION!";
+    } // catch
+  } // getText (String)
+
+  /**
+   * Determines if image is in the current category
+   */
+  public boolean hasImage(String image) {
+    return arr.hasKey(image);
+  } // hasImage(String)
+} // class AACCategory

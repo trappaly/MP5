@@ -106,7 +106,8 @@ public class AssociativeArray<K, V> {
    */
 
   public boolean full() {
-    // If the size of the array is equal to the number of pairs in the array, return true
+    // If the size of the array is equal to the number of pairs in the array, return
+    // true
     if (this.size == pairs.length) {
       return true;
     } // if
@@ -125,7 +126,8 @@ public class AssociativeArray<K, V> {
       if (key == null) {
         throw new NullKeyException();
       } // if
-        // If the key exists, set the index of the pairs of the value equal to the new value
+        // If the key exists, set the index of the pairs of the value equal to the new
+        // value
       if ((pairs[find(key)].value) != value) {
         pairs[find(key)].value = value;
       } // if
@@ -162,9 +164,8 @@ public class AssociativeArray<K, V> {
       // returns true if index at find(key) is greater than or equal to 0
       if (find(key) >= 0) {
         return true;
-      }
+      } // if
     } catch (KeyNotFoundException e) {
-
     } // catch
     return false;
   } // hasKey(K)
@@ -179,7 +180,8 @@ public class AssociativeArray<K, V> {
     try {
       // Initializes the shift to 0
       int shift = 0;
-      // If the key exists, set shift equal to the index at find key and set the index at find key to null
+      // If the key exists, set shift equal to the index at find key and set the index
+      // at find key to null
       if (hasKey(key)) {
         shift = find(key);
         pairs[find(key)] = null;
@@ -209,17 +211,18 @@ public class AssociativeArray<K, V> {
   } // size()
 
   /*
-  * Retrieves all of the keys in the associative array
-  */
-  public String[] getAllKeys(){
+   * Retrieves all of the keys in the associative array
+   */
+  public String[] getAllKeys() {
+    // creates a new array
     String[] arr = new String[this.size];
-    for (int i = 0; i < this.size; i++){
+    for (int i = 0; i < this.size; i++) {
+      // stores the keys in the array
       arr[i] = pairs[i].key.toString();
-  } 
-  return arr;
-}// getallKeys
-
-  
+    } // for
+    // returns the array with the keys
+    return arr;
+  }// getallKeys
 
   // +-----------------+---------------------------------------------
   // | Private Methods |

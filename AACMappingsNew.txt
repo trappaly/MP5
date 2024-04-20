@@ -1,6 +1,4 @@
  
->img/food/plate.png food
->img/clothing/hanger.png clothing
 img/food/plate.png food
 >img/food/icons8-french-fries-96.png french fries
 >img/food/icons8-watermelon-96.png watermelon

@@ -28,12 +28,12 @@ public class AssociativeArray<K, V> {
   /**
    * The size of the associative array (the number of key/value pairs).
    */
-  int size;
+  private int size;
 
   /**
    * The array of key/value pairs. Creates key and values
    */
-  public KVPair<K, V> pairs[];
+  private KVPair<K, V> pairs[];
 
   // +--------------+------------------------------------------------
   // | Constructors |

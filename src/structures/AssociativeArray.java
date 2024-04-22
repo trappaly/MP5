@@ -64,7 +64,7 @@ public class AssociativeArray<K, V> {
     try {
       for (int i = 0; i < this.size; i++) {
         // Clones the array
-        arr.set(pairs[i].key, pairs[i].value);
+        arr.set(pairs[i].getKey(), pairs[i].getValue());
       } // for
     } catch (NullKeyException e) {
     } // catch
@@ -86,11 +86,11 @@ public class AssociativeArray<K, V> {
     for (int i = 0; i < this.size; i++) {
       // If we are on the first iteration of the associative array
       if (i == 0) {
-        str = pairs[0].key + ": " + pairs[0].value;
+        str = pairs[0].getKey() + ": " + pairs[0].getValue();
       } // if
       // If we are on anything, but the first iteration of the associative array
       else {
-        str = str + "," + pairs[i].key + ": " + pairs[i].value;
+        str = str + "," + pairs[i].getKey() + ": " + pairs[i].getValue();
       } // else
     } // for
     // Returns the str inside of { }
@@ -128,8 +128,8 @@ public class AssociativeArray<K, V> {
       } // if
         // If the key exists, set the index of the pairs of the value equal to the new
         // value
-      if ((pairs[find(key)].value) != value) {
-        pairs[find(key)].value = value;
+      if ((pairs[find(key)].getValue()) != value) {
+        pairs[find(key)].setValue(value);
       } // if
     } catch (KeyNotFoundException e) {
       // If the array is full, expand the array and add a new KVPair
@@ -152,7 +152,7 @@ public class AssociativeArray<K, V> {
    *                              appear in the associative array.
    */
   public V get(K key) throws KeyNotFoundException {
-    return pairs[find(key)].value;
+    return pairs[find(key)].getValue();
   } // get(K)
 
   /**
@@ -218,7 +218,7 @@ public class AssociativeArray<K, V> {
     String[] arr = new String[this.size];
     for (int i = 0; i < this.size; i++) {
       // stores the keys in the array
-      arr[i] = pairs[i].key.toString();
+      arr[i] = pairs[i].getKey().toString();
     } // for
     // returns the array with the keys
     return arr;
@@ -243,7 +243,7 @@ public class AssociativeArray<K, V> {
   private int find(K key) throws KeyNotFoundException {
     for (int i = 0; i < this.size; i++) {
       // if key pair is equal to key, return the index
-      if (pairs[i].key.equals(key)) {
+      if (pairs[i].getKey().equals(key)) {
         return i;
       } // if
     } // for
